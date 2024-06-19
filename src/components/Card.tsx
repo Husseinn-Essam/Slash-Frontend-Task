@@ -1,14 +1,6 @@
-import React from 'react';
 
-export interface Post {
-  title: string;
-  tags: string[];
-  userId: number;
-  views: number;
-  body: string;
-}
-
-const Card: React.FC<Post> = ({ tags, title, userId, views, body }) => {
+import {Post} from '../types/types';
+const Card: React.FC<Post> = ({ id, tags, title, userId, views, body }) => {
   return (
     <div className="flex flex-col border rounded-md border-gray-800 p-4 h-full">
       <div className="w-full rounded-md">
@@ -20,17 +12,21 @@ const Card: React.FC<Post> = ({ tags, title, userId, views, body }) => {
       </div>
       <div className="flex p-2 gap-1">
         {tags.map((category, index) => (
-          <div key={index} className="text-dark-primary rounded-lg px-1 py-1 text-xs bg-indigo-950">
+          <div
+            key={index}
+            className="text-dark-primary rounded-lg px-1 py-1 text-xs bg-indigo-950"
+          >
             {category}
           </div>
         ))}
       </div>
       <div className="flex flex-col w-full px-3 flex-grow">
         <h1 className="text-xl font-bold line-clamp-2">{title}</h1>
-        <p className="text-sm text-gray-600 mt-2 line-clamp-3">
-          {body}
-        </p>
-        <a href={`/post/${userId}`} className="text-indigo-600 font-semibold mt-2">
+        <p className="text-sm text-gray-600 mt-2 line-clamp-3">{body}</p>
+        <a
+          href={`/post/${id}`}
+          className="text-indigo-600 font-semibold mt-2"
+        >
           Read More
         </a>
       </div>

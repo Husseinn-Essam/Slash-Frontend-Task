@@ -1,14 +1,6 @@
-import React from 'react';
 import Card from './Card';
+import {Post} from '../types/types';
 
-export interface Post {
-    title: string;
-    tags: string[];
-    userId: number;
-    views: number;
-    body: string;
-  }
-  
 
 const getData = async (): Promise<Post[]> => {
   const response = await fetch('https://dummyjson.com/posts');
@@ -27,6 +19,7 @@ const Catalog = async () => {
       {posts.map((blog, index) => (
         <Card
           key={index}
+            id={blog.id}
           tags={blog.tags}
           title={blog.title}
           userId={blog.userId}
