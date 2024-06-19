@@ -1,5 +1,7 @@
+import React from 'react';
+import { Post } from '../types/types';
+import { Author } from './Author';
 
-import {Post} from '../types/types';
 const Card: React.FC<Post> = ({ id, tags, title, userId, views, body }) => {
   return (
     <div className="flex flex-col border rounded-md border-gray-800 p-4 h-full">
@@ -23,25 +25,21 @@ const Card: React.FC<Post> = ({ id, tags, title, userId, views, body }) => {
       <div className="flex flex-col w-full px-3 flex-grow">
         <h1 className="text-xl font-bold line-clamp-2">{title}</h1>
         <p className="text-sm text-gray-600 mt-2 line-clamp-3">{body}</p>
-        <a
-          href={`/post/${id}`}
-          className="text-indigo-600 font-semibold mt-2"
-        >
+        <a href={`/post/${id}`} className="text-indigo-600 font-semibold mt-2">
           Read More
         </a>
       </div>
-      <div className="flex flex-row mt-2">
-        <div className="flex flex-row items-center gap-10">
-          <div className="flex flex-row items-center p-3">
-            <img
-              className="w-6 h-6 rounded-full"
-              src="https://via.placeholder.com/150"
-              alt="avatar"
-            />
-            <h1 className="text-xs text-gray-600 font-bold ml-2">{userId}</h1>
-          </div>
-          <p className="text-xs text-gray-600 font-bold ml-2">{views} Views</p>
+      <div className="flex flex-row items-center mt-2">
+        <div className="flex flex-row items-center flex-grow">
+          <img
+            className="w-6 h-6 rounded-full"
+            src="https://via.placeholder.com/150"
+            alt="avatar"
+          />
+          {/* <p className="text-xs text-gray-600 font-bold ml-2">{userId}</p> */}
+        <Author userId={userId}/>
         </div>
+        <p className="text-xs text-gray-600 font-bold ml-2">{views} Views</p>
       </div>
     </div>
   );
