@@ -1,8 +1,13 @@
-import React from 'react';
-import { Post } from '../types/types';
-import { Author } from './Author';
+import React, { Suspense } from "react";
+import { Post } from "../types/types";
+import { Author } from "./Author";
+import Link from "next/link";
 
-const Card: React.FC<Post> = ({ id, tags, title, userId, views, body }) => {
+interface CardProps {
+  blog: Post;
+}
+
+const Card: React.FC<CardProps> = ({ blog }) => {
   return (
     <div className="flex flex-col border rounded-md border-gray-800 p-4 h-full">
       <div className="w-full rounded-md">
@@ -13,7 +18,7 @@ const Card: React.FC<Post> = ({ id, tags, title, userId, views, body }) => {
         />
       </div>
       <div className="flex p-2 gap-1">
-        {tags.map((category, index) => (
+        {blog.tags.map((category: string, index: number) => (
           <div
             key={index}
             className="text-dark-primary rounded-lg px-1 py-1 text-xs bg-indigo-950"
@@ -23,11 +28,14 @@ const Card: React.FC<Post> = ({ id, tags, title, userId, views, body }) => {
         ))}
       </div>
       <div className="flex flex-col w-full px-3 flex-grow">
-        <h1 className="text-xl font-bold line-clamp-2">{title}</h1>
-        <p className="text-sm text-gray-600 mt-2 line-clamp-3">{body}</p>
-        <a href={`/post/${id}`} className="text-indigo-600 font-semibold mt-2">
+        <h1 className="text-xl font-bold line-clamp-2">{blog.title}</h1>
+        <p className="text-sm text-gray-600 mt-2 line-clamp-3">{blog.body}</p>
+        <Link
+          href={`/blog/${blog.id}`}
+          className="text-indigo-600 font-semibold mt-2"
+        >
           Read More
-        </a>
+        </Link>
       </div>
       <div className="flex flex-row items-center mt-2">
         <div className="flex flex-row items-center flex-grow">
@@ -36,10 +44,19 @@ const Card: React.FC<Post> = ({ id, tags, title, userId, views, body }) => {
             src="https://via.placeholder.com/150"
             alt="avatar"
           />
-          {/* <p className="text-xs text-gray-600 font-bold ml-2">{userId}</p> */}
-        <Author userId={userId}/>
+          <Suspense
+            fallback={
+              <div className="text-xs text-gray-600 font-bold ml-2">
+                loading
+              </div>
+            }
+          >
+            <Author userId={blog.userId} />
+          </Suspense>
         </div>
-        <p className="text-xs text-gray-600 font-bold ml-2">{views} Views</p>
+        <p className="text-xs text-gray-600 font-bold ml-2">
+          {blog.views} Views
+        </p>
       </div>
     </div>
   );

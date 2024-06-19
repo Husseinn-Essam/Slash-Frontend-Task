@@ -11,20 +11,12 @@ const getData = async (): Promise<Post[]> => {
 };
 
 const Catalog = async () => {
-  const posts = await getData();
+  const blogs = await getData();
 
   return (
     <div className="border-s-violet-100 grid grid-cols-1 bg-base sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4 justify-items-center">
-      {posts.map((blog) => (
-        <Card
-          key={blog.id}
-          id={blog.id}
-          tags={blog.tags}
-          title={blog.title}
-          userId={blog.userId}
-          views={blog.views}
-          body={blog.body}
-        />
+      {blogs.map((blog) => (
+        <Card key={blog.id} blog={blog} />
       ))}
     </div>
   );
