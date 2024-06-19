@@ -8,7 +8,7 @@ interface CardProps {
 
 import React from 'react'
 
-export const Card: React.FC<CardProps> = ({categories,title,author,views}) => {
+ const Card: React.FC<CardProps> = ({categories,title,author,views}) => {
   return (
     
         <div className="flex flex-col border rounded-md border-gray-800">
