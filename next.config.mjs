@@ -10,6 +10,9 @@ const nextConfig = {
           },
         ];
       },
+      images: {
+        domains: ['picsum.photos',"via.placeholder.com","placeholder.com","via.placeholder.com/150"],
+      },
 
 };
 

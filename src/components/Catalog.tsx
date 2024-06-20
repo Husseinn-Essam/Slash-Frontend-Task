@@ -9,14 +9,13 @@ const getData = async (): Promise<Post[]> => {
   const data = await response.json();
   return data.posts;
 };
-
 const Catalog = async () => {
-  const blogs = await getData();
+  const blogPosts = await getData();
 
   return (
-    <div className="border-s-violet-100 grid grid-cols-1 bg-base sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4 justify-items-center">
-      {blogs.map((blog) => (
-        <Card key={blog.id} blog={blog} />
+    <div className=" border-s-violet-100 grid grid-cols-1 bg-base sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4 justify-items-center">
+      {blogPosts.map((blogPost) => (
+        <Card key={blogPost.id} blogPost={blogPost} />
       ))}
     </div>
   );

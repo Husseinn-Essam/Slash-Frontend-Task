@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Author } from "@/components/Author";
 import BlogTags from "@/components/BlogTags";
 import BlogMetrics from "@/components/BlogMetrics";
-
+import Image from "next/image";
 interface BlogProps {
   params: { slug: string };
 }
@@ -28,10 +28,12 @@ const Post: React.FC<BlogProps> = async ({ params }) => {
       <h1 className="text-4xl font-bold mb-4 text-white">{title}</h1>
       <div className="flex flex-row items-center mt-2">
         <div className="flex flex-row items-center flex-grow">
-          <img
+          <Image
             className="w-6 h-6 rounded-full"
             src="https://via.placeholder.com/150"
             alt="avatar"
+            width={150}
+            height={150}
           />
           <Suspense
             fallback={
@@ -45,10 +47,12 @@ const Post: React.FC<BlogProps> = async ({ params }) => {
         </div>
         <BlogMetrics views={views} reactions={reactions} />
       </div>
-      <img
+      <Image
         className="mt-3 rounded-xl w-full items-center mx-auto max-h-96 object-cover"
-        src="https://via.placeholder.com/300"
+        src="https://picsum.photos/id/16/1400/1400"
         alt="placeholder"
+       width={1400}
+       height={1400}
       />
       <div className="mt-8 mb-12">
         <p className="text-lg text-white">{body}</p>
