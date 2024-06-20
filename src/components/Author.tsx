@@ -1,3 +1,5 @@
+// i decided to make the author name a server component because it does its own fetching of data 
+// and i didn't want to block the rendering of the blog post while waiting for the author name to load 
 interface User {
   firstName: string;
   lastName: string;

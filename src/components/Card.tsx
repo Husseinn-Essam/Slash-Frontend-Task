@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Post } from "../types/types";
 import { Author } from "./Author";
 import Link from "next/link";
+import BlogTags from "@/components/BlogTags";
 
 interface CardProps {
   blog: Post;
@@ -17,16 +18,8 @@ const Card: React.FC<CardProps> = ({ blog }) => {
           alt="placeholder"
         />
       </div>
-      <div className="flex p-2 gap-1">
-        {blog.tags.map((category: string, index: number) => (
-          <div
-            key={index}
-            className="text-dark-primary rounded-lg px-1 py-1 text-xs bg-indigo-950"
-          >
-            {category}
-          </div>
-        ))}
-      </div>
+      <BlogTags tags={blog.tags} />
+
       <div className="flex flex-col w-full px-3 flex-grow">
         <h1 className="text-xl font-bold line-clamp-2">{blog.title}</h1>
         <p className="text-sm text-gray-600 mt-2 line-clamp-3">{blog.body}</p>
