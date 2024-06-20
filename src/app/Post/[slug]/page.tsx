@@ -8,7 +8,7 @@ interface BlogProps {
 }
 
 const getData = async (blogID: number) => {
-  const response = await fetch(`https://dummyjson.com/posts/${blogID}`);
+  const response = await fetch(`https://dummyjson.com/posts/${blogID}`,{cache:'no-store'});
   if (!response.ok) {
     throw new Error("Something went wrong");
   }
