@@ -4,6 +4,7 @@ import { Author } from "./Author";
 import Link from "next/link";
 import BlogTags from "@/components/BlogTags";
 import Image from "next/image";
+
 interface CardProps {
   blogPost: Post;
 }
@@ -45,9 +46,7 @@ const Card: React.FC<CardProps> = ({ blogPost }) => {
           />
           <Suspense
             fallback={
-              <div className="text-xs text-gray-600 font-bold ml-2">
-                loading
-              </div>
+              <div className="ml-2 h-4 bg-gray-800 rounded-md w-1/5 animate-pulse"></div>
             }
           >
             <Author userId={blogPost.userId} />

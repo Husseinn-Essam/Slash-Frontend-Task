@@ -37,9 +37,7 @@ const Post: React.FC<BlogProps> = async ({ params }) => {
           />
           <Suspense
             fallback={
-              <div className="text-xs text-gray-600 font-bold ml-2">
-                loading
-              </div>
+              <div className="ml-2 h-4 bg-gray-800 rounded-md w-1/5 animate-pulse"></div>
             }
           >
             <Author userId={userId} />

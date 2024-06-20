@@ -1,5 +1,6 @@
 import Card from "./Card";
 import { Post } from "../types/types";
+import CardLoadingSkeleton from "./CardLoadingSkeleton";
 
 const getData = async (): Promise<Post[]> => {
   const response = await fetch("https://dummyjson.com/posts");
@@ -13,9 +14,18 @@ const getData = async (): Promise<Post[]> => {
 const Catalog = async () => {
   const blogPosts = await getData();
 
+  if (!blogPosts) {
+    return (
+      <>
+        {Array.from({ length: 8 }).map((_, index) => (
+          <CardLoadingSkeleton key={index} />
+        ))}
+      </>
+    );
+  }
   return (
     <div className="w-screen sm:w-auto md:w-auto px-4 py-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {blogPosts.map((blogPost) => (
           <Card key={blogPost.id} blogPost={blogPost} />
         ))}
