@@ -16,7 +16,7 @@ const getData = async (blogID: number) => {
   return data;
 };
 
-const BlogPage: React.FC<BlogProps> = async ({ params }) => {
+const Post: React.FC<BlogProps> = async ({ params }) => {
   const blogID = parseInt(params.slug, 10);
 
   const blog = await getData(blogID);
@@ -57,4 +57,4 @@ const BlogPage: React.FC<BlogProps> = async ({ params }) => {
   );
 };
 
-export default BlogPage;
+export default Post;

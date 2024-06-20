@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({ blog }) => {
         <h1 className="text-xl font-bold line-clamp-2">{blog.title}</h1>
         <p className="text-sm text-gray-600 mt-2 line-clamp-3">{blog.body}</p>
         <Link
-          href={`/blog/${blog.id}`}
+          href={`/Post/${blog.id}`}
           className="text-indigo-600 font-semibold mt-2"
         >
           Read More

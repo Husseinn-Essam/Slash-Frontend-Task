@@ -81,11 +81,9 @@ const CreatePostPage: React.FC = () => {
     <div className="min-h-screen flex  justify-center bg-dark-bg py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-dark-txt -mb-5">
-          Create a New Blog
+          Create a New Post
         </h2>
-        <div className="h-1 bg-dark-primary">
-          
-        </div>
+        <div className="h-1 bg-dark-primary"></div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="flex flex-col gap-2 rounded-md shadow-sm -space-y-px">
             <div>

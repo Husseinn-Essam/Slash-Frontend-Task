@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect } from "react";
 
 interface NotificationProps {
@@ -18,7 +17,8 @@ const Notification: React.FC<NotificationProps> = ({ message, onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="fixed top-0 mt-5  mb-4 mr-4 p-4 bg-green-700 text-white rounded-md shadow-md">
+    <div className="fixed top-0 mt-5 mr-4 p-4 bg-green-700 text-white rounded-md shadow-md
+                   animate-notification">
       <p>{message}</p>
     </div>
   );

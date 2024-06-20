@@ -16,7 +16,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link
               className="rounded-md text-xl font-bold hover:bg-gray-700 px-3 py-2"
-              href="/"
+              href="/Home"
             >
               <span className="text-yellow-400">{"{"}</span>
               <span className="text-dark-primary">( )</span>
@@ -28,15 +28,15 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-4">
             <Link
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
-              href="/"
+              href="/Home"
             >
               Home
             </Link>
             <Link
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
-              href="/create-blog"
+              href="/createPost"
             >
-              Create Blog
+              Create Post
             </Link>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -93,15 +93,15 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
             className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
-            href="/"
+            href="/Home"
           >
             Home
           </Link>
           <Link
             className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
-            href="/create-blog"
+            href="/createPost"
           >
-            Create Blog
+            Create Post
           </Link>
         </div>
       </div>

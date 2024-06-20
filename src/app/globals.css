@@ -14,9 +14,19 @@ body {
   background-color: var(--background-color);
 }
 
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
+
+.animate-notification {
+  animation: slideDown 0.7s ease-in-out;
+}
+
