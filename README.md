@@ -27,7 +27,7 @@ To install the project locally, follow these steps:
    ```
 
 2. **Install dependencies**:
-   If you use npm:
+
    ```sh
    npm install
    ```
@@ -37,27 +37,21 @@ To install the project locally, follow these steps:
 Once the dependencies are installed, you can run the project locally:
 
 1. **Start the development server**:
-   If you use npm:
 
    ```sh
    npm run dev
    ```
 
-
-
    The application will be available at [http://localhost:3000](http://localhost:3000).
 
 2. **Build the project for production**:
-   If you use npm:
 
    ```sh
    npm run build
    ```
 
- 
 3. **Run the production build**:
-   If you use npm:
+
    ```sh
    npm start
    ```
- 
