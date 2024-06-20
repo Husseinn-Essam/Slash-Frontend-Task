@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PostSkeleton = () => {
   return (
     <div className="min-h-screen max-w-4xl mx-auto px-4 py-8 bg-dark-bg animate-pulse">

@@ -7,6 +7,15 @@ interface BlogProps {
   params: { slug: string };
 }
 
+export const generateMetadata = async ({ params }: BlogProps) => {
+  const blogID = parseInt(params.slug, 10);
+  const post = await getData(blogID);
+
+  return {
+    title: post.title,
+  };
+};
+
 const getData = async (blogID: number) => {
   const response = await fetch(`https://dummyjson.com/posts/${blogID}`);
   if (!response.ok) {
