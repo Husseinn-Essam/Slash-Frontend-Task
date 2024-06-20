@@ -21,7 +21,7 @@ const Navbar = () => {
               <span className="text-yellow-400">{"{"}</span>
               <span className="text-dark-primary">( )</span>
               <span className="text-yellow-400">{" =>"}</span>
-              <span className="text-white"> Dev Blog</span>
+              <span className="text-white"> Slash.</span>
               <span className="text-yellow-400">{"}"}</span>
             </Link>
           </div>

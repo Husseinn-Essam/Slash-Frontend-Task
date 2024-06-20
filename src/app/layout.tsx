@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dev Blog",
-  description: "A Blog Application built with NextJs",
+  title: "Slash Task",
+  description: "Slash Frontend tasl: Blog Application ",
 };
 
 export default function RootLayout({
