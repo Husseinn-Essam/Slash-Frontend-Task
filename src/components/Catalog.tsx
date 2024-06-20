@@ -9,14 +9,17 @@ const getData = async (): Promise<Post[]> => {
   const data = await response.json();
   return data.posts;
 };
+
 const Catalog = async () => {
   const blogPosts = await getData();
 
   return (
-    <div className=" border-s-violet-100 grid grid-cols-1 bg-base sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4 justify-items-center">
-      {blogPosts.map((blogPost) => (
-        <Card key={blogPost.id} blogPost={blogPost} />
-      ))}
+    <div className="w-screen sm:w-auto md:w-auto px-4 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-4">
+        {blogPosts.map((blogPost) => (
+          <Card key={blogPost.id} blogPost={blogPost} />
+        ))}
+      </div>
     </div>
   );
 };

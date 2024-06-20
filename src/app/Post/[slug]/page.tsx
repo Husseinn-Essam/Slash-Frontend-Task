@@ -21,7 +21,7 @@ const Post: React.FC<BlogProps> = async ({ params }) => {
 
   const blog = await getData(blogID);
 
-  const { title, userId, tags, body, views, reactions, id } = blog;
+  const { title, userId, tags, body, views, reactions } = blog;
   return (
     <div className="min-h-screen max-w-4xl mx-auto px-4 py-8 bg-dark-bg">
       <BlogTags tags={tags} />
@@ -30,7 +30,7 @@ const Post: React.FC<BlogProps> = async ({ params }) => {
         <div className="flex flex-row items-center flex-grow">
           <Image
             className="w-6 h-6 rounded-full"
-            src="https://via.placeholder.com/150"
+            src="/profile.png"
             alt="avatar"
             width={150}
             height={150}
@@ -49,10 +49,10 @@ const Post: React.FC<BlogProps> = async ({ params }) => {
       </div>
       <Image
         className="mt-3 rounded-xl w-full items-center mx-auto max-h-96 object-cover"
-        src="https://picsum.photos/id/16/1400/1400"
+        src="/water.jpg"
         alt="placeholder"
-       width={1400}
-       height={1400}
+        width={1400}
+        height={1400}
       />
       <div className="mt-8 mb-12">
         <p className="text-lg text-white">{body}</p>

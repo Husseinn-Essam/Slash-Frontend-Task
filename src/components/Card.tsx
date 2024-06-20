@@ -13,18 +13,20 @@ const Card: React.FC<CardProps> = ({ blogPost }) => {
     <div className=" flex flex-col border rounded-md border-gray-800 p-4 h-full">
       <div className="w-full rounded-md">
         <Image
-          src="https://picsum.photos/id/0/300/300"
+          className="rounded-md"
+          src="/water.jpg"
           alt="placeholder"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
         />
-       
       </div>
       <BlogTags tags={blogPost.tags} />
 
-      <div className="flex flex-col w-full px-3 flex-grow">
+      <div className=" flex flex-col w-full  flex-grow">
         <h1 className="text-xl font-bold line-clamp-2">{blogPost.title}</h1>
-        <p className="text-sm text-gray-600 mt-2 line-clamp-3">{blogPost.body}</p>
+        <p className="text-sm text-gray-600 mt-2 line-clamp-3">
+          {blogPost.body}
+        </p>
         <Link
           href={`/Post/${blogPost.id}`}
           className="text-indigo-600 font-semibold mt-2"
@@ -32,11 +34,11 @@ const Card: React.FC<CardProps> = ({ blogPost }) => {
           Read More
         </Link>
       </div>
-      <div className="flex flex-row items-center mt-2">
+      <div className=" flex flex-row items-center mt-2">
         <div className="flex flex-row items-center flex-grow">
           <Image
-            className="w-6 h-6 rounded-full"
-            src="https://via.placeholder.com/150"
+            className="w-5 h-5 rounded-full"
+            src="/profile.png"
             alt="avatar"
             width={150}
             height={150}
