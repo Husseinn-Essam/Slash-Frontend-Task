@@ -64,7 +64,7 @@ const CreatePostPage: React.FC = () => {
       valid = false;
     }
 
-    if (!post.tags.length) {
+    if (post.tags.length==0) {
       newErrors["tags"] = "At least one tag is required";
       valid = false;
     }
