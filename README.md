@@ -71,22 +71,22 @@ Once the dependencies are installed, you can run the project locally:
    - Success Notification.
    - Form validation.
 
-
 ## Key Decisions
 
 The following key decisions were made during the development process:
 
-- To achieve faster initial page load, the Posts Catalog and cards were implemented as server-side components.
+- To achieve faster initial page load, the posts catalog and cards were implemented as server-side components.
 
-- I decided to make the author name a server component because it does its own fetching of data and i didn't want to block the rendering of the blog post while waiting for the author name to load 
+- To enhance the user experience, I decided to make the author name a separate server component. The reason behind this decision is to prevent blocking the rendering of the blog post while waiting for the author name which is fetched from a different URL. This approach ensures that the blog post content is displayed quickly, even if the author name data is still being fetched.
 
 - For better SEO, I used the generateMetadata function for dynamic metadata thats depends on post page.
 
 - I used TypeScript for Type Saftey.
 
-- I have Implemented a loading state while fetching data for both the Post page and the Post catalog.
+- I have Implemented a loading state while fetching data for both the post page and the posts catalog.
 
 - I used Tailwind CSS because it is supported in Server Components and it works exceptionally well with Next.js.
+
 ## Technologies Used
 
 - Next.js v14
