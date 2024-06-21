@@ -23,7 +23,7 @@ export const Author: React.FC<{ userId: number }> = async ({ userId }) => {
 
   return (
     <>
-      <h1 className="text-xs text-gray-600 font-bold ml-2">
+      <h1 className="text-sm text-gray-500 font-bold ml-2">
         {username.firstName}
       </h1>
     </>

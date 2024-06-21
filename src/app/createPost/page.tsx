@@ -96,7 +96,7 @@ const CreatePostPage: React.FC = () => {
                 type="text"
                 className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${
                   errors["title"] ? "border-red-500" : "border-gray-300"
-                } placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
+                } placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none border-2 border-gray-500 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
                 placeholder="Title"
                 value={post.title}
                 onChange={handleChange}
@@ -114,7 +114,7 @@ const CreatePostPage: React.FC = () => {
                 name="content"
                 className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${
                   errors["content"] ? "border-red-500" : "border-gray-300"
-                } placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
+                } placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none border-2 border-gray-500 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
                 placeholder="Content"
                 rows={5}
                 value={post.content}
@@ -134,7 +134,7 @@ const CreatePostPage: React.FC = () => {
                 type="text"
                 className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${
                   errors["tags"] ? "border-red-500" : "border-gray-300"
-                } placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
+                } placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none border-2 border-gray-500 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
                 placeholder="Tags (comma separated)"
                 value={post.tags.join(", ")}
                 onChange={handleTagChange}

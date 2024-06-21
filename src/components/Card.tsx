@@ -52,7 +52,7 @@ const Card: React.FC<CardProps> = ({ blogPost }) => {
             <Author userId={blogPost.userId} />
           </Suspense>
         </div>
-        <p className="text-xs text-gray-600 font-bold ml-2">
+        <p className="text-xs text-gray-500 font-bold ml-2">
           {blogPost.views} Views
         </p>
       </div>
