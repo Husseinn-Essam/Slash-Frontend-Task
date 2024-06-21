@@ -4,9 +4,18 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    if (!isOpen) {
+      setIsOpen(true);
+    } else {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setIsOpen(false);
+        setIsAnimating(false);
+      }, 500);
+    }
   };
 
   return (
@@ -87,18 +96,24 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`${isOpen ? "block" : "hidden"} md:hidden`}
+        className={`${
+          isOpen
+            ? isAnimating
+              ? "animate-slideUp"
+              : "animate-slideDown"
+            : "hidden"
+        } md:hidden`}
         id="mobile-menu"
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
-            className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
+            className="block px-3 py-2 rounded-md text-base font-medium focus:bg-gray-700"
             href="/Home"
           >
             Home
           </Link>
           <Link
-            className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
+            className="block px-3 py-2 rounded-md text-base font-medium focus:bg-gray-700"
             href="/createPost"
           >
             Create Post
